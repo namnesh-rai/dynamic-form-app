@@ -1,0 +1,42 @@
+<div *ngFor="let field of formData" id="form-container">
+    <ng-container *ngIf="field.type === 'text' || field.type === 'password' || field.type === 'email'">
+      <input type="{{ field.type }}" placeholder="{{ field.label }}" name="{{ field.name }}">
+    </ng-container>
+    <ng-container *ngIf="field.type === 'checkbox'">
+      <input type="checkbox" id="{{ field.name }}" name="{{ field.name }}">
+      <label for="{{ field.name }}">{{ field.label }}</label>
+    </ng-container>
+    <ng-container *ngIf="field.type === 'textarea'">
+      <textarea placeholder="{{ field.label }}" name="{{ field.name }}"></textarea>
+    </ng-container>
+    <ng-container *ngIf="field.type === 'range'">
+      <input type="range" id="{{ field.name }}" name="{{ field.name }}" min="{{ field.min }}" max="{{ field.max }}" value="{{ field.value }}">
+      <label for="{{ field.name }}">{{ field.label }}</label>
+    </ng-container>
+  
+    <ng-container *ngIf="field.formtext && field.formtext.length > 0">
+      <div *ngFor="let textField of field.formtext">
+        <ng-container *ngIf="textField.enabled === true">
+          <input type="text" placeholder="{{ textField.label }}" name="{{ textField.name }}">
+        </ng-container>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="field.formpara && field.formpara.length > 0">
+      <div *ngFor="let paraField of field.formpara">
+        <ng-container *ngIf="paraField.enabled === true">
+          <textarea placeholder="{{ paraField.label }}" name="{{ paraField.name }}"></textarea>
+        </ng-container>
+      </div>
+    </ng-container>
+  
+    <ng-container *ngIf="field.formrange && field.formrange.length > 0">
+      <div *ngFor="let rangeField of field.formrange">
+        <ng-container *ngIf="rangeField.enabled !== false">
+          <input type="range" id="{{ rangeField.name }}" name="{{ rangeField.name }}" min="{{ rangeField.min }}" max="{{ rangeField.max }}" value="{{ rangeField.value }}">
+          <label for="{{ rangeField.name }}">{{ rangeField.label }}</label>
+        </ng-container>
+      </div>
+    </ng-container>
+  </div>
+  
