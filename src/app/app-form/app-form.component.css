@@ -1,0 +1,71 @@
+/* app-form.component.css */
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    margin: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  input,
+  textarea,
+  label {
+    margin: 10px 0;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+  }
+  
+  input[type="range"] {
+    width: 80%;
+  }
+  
+  /* Add hover effect */
+  input:hover,
+  textarea:hover,
+  label:hover {
+    background-color: #e0e0e0;
+    transition: background-color 0.3s;
+  }
+  
+  /* Add focus effect */
+  input:focus,
+  textarea:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+  }
+  
+  /* Style the checkbox label */
+  label[for^="checkbox"] {
+    display: inline-block;
+    margin-left: 5px;
+  }
+  
+  /* Add some spacing between form sections */
+  div:not(#form-container) {
+    margin-top: 20px;
+  }
+  
+  /* Responsive design */
+  @media (max-width: 600px) {
+    input,
+    textarea,
+    label {
+      width: 100%;
+    }
+  }
+  
